@@ -3,9 +3,7 @@ package cn.film.back.utils.util;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-
 public class MD5Util {
-
 
   public static String encrypt(String source) {
     return encodeMd5(source.getBytes());

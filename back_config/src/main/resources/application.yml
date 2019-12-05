@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: back-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ruichunjie/back_parent
+          username: ruichunjie
+          password: 131001rh
+          basedir: /Users/renchunjie/Desktop/back_config_git
+          search-paths: back_config_repo
+server:
+  port: 9001
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9001/eureka/
+    register-with-eureka: false
+    fetch-registry: false
+
+management:
+  endpoints:
+    web:
+      expose: "*"

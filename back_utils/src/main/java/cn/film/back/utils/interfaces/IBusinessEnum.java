@@ -5,7 +5,7 @@ package cn.film.back.utils.interfaces;
  * @author: xinYue
  * @time: 2019/12/2 15:36
  */
-public interface IBusinessExceptionEnum {
+public interface IBusinessEnum {
 
     /**
      * 获取错误编码
@@ -19,6 +19,6 @@ public interface IBusinessExceptionEnum {
      *
      * @return
      */
-    String getMsg();
+    String getMessage();
 
 }
