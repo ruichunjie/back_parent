@@ -7,8 +7,5 @@ package cn.film.back.utils.common.vo;
  */
 public class BaseResponseVo {
 
-    public String run(String message){
-        return "vo:"+message;
-    }
 
 }
