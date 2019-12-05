@@ -2,6 +2,7 @@ package cn.film.back.common.mapper;
 
 import cn.film.back.common.BackCommonApplicationTest;
 import cn.film.back.common.entity.BackendUser;
+import cn.film.back.utils.util.MD5Util;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -22,11 +23,14 @@ public class UserTest extends BackCommonApplicationTest {
 
     @Test
     public void add(){
-        for(int i=0;i<5;i++){
-            BackendUser user = BackendUser.builder()
-                    .userName("admin"+i).userPwd("asd"+i).userPhone("18518982015").build();
-            backendUserMapper.insert(user);
-        }
+//        for(int i=0;i<5;i++){
+//            BackendUser user = BackendUser.builder()
+//                    .userName("admin"+i).userPwd("asd"+i).userPhone("18518982015").build();
+//            backendUserMapper.insert(user);
+//        }
+        BackendUser user = BackendUser.builder()
+                    .userName("admin").userPwd(MD5Util.encrypt("123456")).userPhone("18518982015").build();
+        backendUserMapper.insert(user);
 
     }
 

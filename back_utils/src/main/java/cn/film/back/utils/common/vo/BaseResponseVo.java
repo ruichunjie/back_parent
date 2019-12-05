@@ -1,7 +1,6 @@
 package cn.film.back.utils.common.vo;
 
 import cn.film.back.utils.interfaces.IBusinessEnum;
-import lombok.Builder;
 import lombok.Data;
 
 import static cn.film.back.utils.enums.BusinessEnum.SUCCESS;
@@ -12,7 +11,6 @@ import static cn.film.back.utils.enums.BusinessEnum.SUCCESS;
  * writed by xinyue
  */
 @Data
-@Builder
 public class BaseResponseVo<T> {
 
     private Integer code;
@@ -21,15 +19,29 @@ public class BaseResponseVo<T> {
 
     private T data;
 
-    public BaseResponseVo success(){
+    private BaseResponseVo(){}
+
+    public static  BaseResponseVo success(){
         return business(SUCCESS);
     }
 
-    public BaseResponseVo business(IBusinessEnum businessEnum){
-        BaseResponseVo vo = BaseResponseVo.builder()
-                .code(businessEnum.getCode())
-                .message(businessEnum.getMessage())
-                .build();
+    public static  BaseResponseVo success(Object data){
+        BaseResponseVo vo = business(SUCCESS);
+        vo.setData(data);
+        return vo;
+    }
+
+    public static BaseResponseVo business(IBusinessEnum businessEnum){
+        BaseResponseVo vo = new BaseResponseVo();
+        vo.setCode(businessEnum.getCode());
+        vo.setMessage(businessEnum.getMessage());
+        return vo;
+    }
+
+    public static BaseResponseVo fail(Integer code, String message){
+        BaseResponseVo vo = new BaseResponseVo();
+        vo.setCode(code);
+        vo.setMessage(message);
         return vo;
     }
 

@@ -1,0 +1,18 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: back-user
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: BACK-CONFIG
+      profile: dev
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9000/eureka/
+
