@@ -17,3 +17,5 @@
    ```
 3.git上 刷新配置要配置url+"/monitor"，
 本质上是对"/bus/refresh"的访问
+
+4.客户端要同步刷新的话 对property配置类加上@RefreshScope
