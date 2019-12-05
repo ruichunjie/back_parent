@@ -1,6 +1,6 @@
 package cn.film.back.utils.exception;
 
-import cn.film.back.utils.interfaces.IBusinessExceptionEnum;
+import cn.film.back.utils.interfaces.IBusinessEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class BusinessException extends RuntimeException implements IBusinessExceptionEnum {
+public class BusinessException extends RuntimeException implements IBusinessEnum {
 
     /**
      * 编码
@@ -21,23 +21,23 @@ public class BusinessException extends RuntimeException implements IBusinessExce
     /**
      * 描述
      */
-    private String msg;
+    private String message;
 
     public BusinessException(String message) {
         super(message);
-        this.msg = message;
+        this.message = message;
     }
 
     public BusinessException(Integer code, String msg) {
         super(msg);
-        this.msg = msg;
+        this.message = msg;
         this.code = code;
     }
 
-    public BusinessException(IBusinessExceptionEnum exceptionEnum) {
-        super(exceptionEnum.getMsg());
-        this.msg = exceptionEnum.getMsg();
-        this.code = exceptionEnum.getCode();
+    public BusinessException(IBusinessEnum businessEnum) {
+        super(businessEnum.getMessage());
+        this.message = businessEnum.getMessage();
+        this.code = businessEnum.getCode();
     }
 
 }

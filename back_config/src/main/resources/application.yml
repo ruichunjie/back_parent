@@ -16,11 +16,12 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:9001/eureka/
+      defaultZone: http://localhost:9000/eureka/
     register-with-eureka: false
     fetch-registry: false
 
 management:
   endpoints:
     web:
-      expose: "*"
+      exposure:
+        exclude: ""
