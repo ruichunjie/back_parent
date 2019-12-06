@@ -1,6 +1,6 @@
-package cn.film.back.common.mapper;
+package cn.film.back.user.mapper;
 
-import cn.film.back.common.entity.BackendUser;
+import cn.film.back.user.entity.BackendUser;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

@@ -1,4 +1,4 @@
-package cn.film.back.utils.common;
+package cn.film.back.utils.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

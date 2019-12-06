@@ -17,8 +17,10 @@ public enum BusinessEnum implements IBusinessEnum {
     ERROR(500,"执行失败!"),
 
     /**参数错误*/
-    PRECONDITION_FAILED(412,"参数错误!"),
-
+    BAD_REQUEST(412,"参数错误!"),
+    NOSUPORT(405,"请求方式不受支持!"),
+    UNSUPPORTEDTYPE(415,"格式不受支持!"),
+    INTERNALSERVERERROR(500, "未知异常!"),
 
     /**自定义异常*/
     COMMONNAME_FAILED(1001,"数据库中有多个同名后台用户!"),

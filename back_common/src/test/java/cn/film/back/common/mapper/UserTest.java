@@ -1,7 +1,6 @@
 package cn.film.back.common.mapper;
 
 import cn.film.back.common.BackCommonApplicationTest;
-import cn.film.back.common.entity.BackendUser;
 import cn.film.back.utils.util.MD5Util;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;

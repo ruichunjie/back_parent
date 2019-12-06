@@ -1,7 +1,7 @@
 package cn.film.back.user.service;
 
-import cn.film.back.common.entity.BackendUser;
-import cn.film.back.common.mapper.BackendUserMapper;
+import cn.film.back.user.entity.BackendUser;
+import cn.film.back.user.mapper.BackendUserMapper;
 import cn.film.back.utils.exception.BusinessException;
 import cn.film.back.utils.interfaces.SysLog;
 import cn.film.back.utils.util.MD5Util;

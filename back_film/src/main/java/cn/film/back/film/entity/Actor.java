@@ -1,4 +1,4 @@
-package cn.film.back.common.entity;
+package cn.film.back.film.entity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.extension.activerecord.Model;

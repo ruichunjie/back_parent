@@ -1,12 +1,14 @@
-package cn.film.back.common.entity;
-import com.baomidou.mybatisplus.annotation.TableName;
+package cn.film.back.user.entity;
+
 import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Builder;
 import lombok.Data;
 
 import java.io.Serializable;
+
 /**
  * <p>
  * 后台用户表

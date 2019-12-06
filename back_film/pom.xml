@@ -8,22 +8,15 @@
         <version>1.0.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>back-config</artifactId>
-    <name>back-config</name>
-    <description>film 后台项目配置中心</description>
+
+    <artifactId>back-film</artifactId>
+    <name>back-film</name>
+    <description>film 影院模块</description>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-monitor</artifactId>
+            <groupId>cn.film.back</groupId>
+            <artifactId>back-common</artifactId>
         </dependency>
 
         <!--引入eureka-client-->
@@ -32,6 +25,11 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
+        <!--引入config-client-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-client</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
