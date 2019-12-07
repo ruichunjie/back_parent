@@ -13,13 +13,22 @@
     <description>film 后台系统播放厅</description>
 
     <dependencies>
+        <!--film 包-->
         <dependency>
             <groupId>cn.film.back</groupId>
             <artifactId>back-common</artifactId>
         </dependency>
+
+        <!--eureka客户端-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+        <!--引入config-client-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-client</artifactId>
         </dependency>
     </dependencies>
 
