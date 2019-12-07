@@ -1,4 +1,4 @@
-package cn.film.back.common.entity;
+package cn.film.back.hall.entity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
@@ -9,16 +9,16 @@ import lombok.Data;
 import java.io.Serializable;
 /**
  * <p>
- * 影片与演员映射表
+ * 影厅电影信息表
  * </p>
  *
  * @author xinyue
  * @since 2019-12-04
  */
-@TableName("cn_film_actor")
+@TableName("cn_hall_film_info")
 @Data
 @Builder
-public class FilmActor extends Model<FilmActor> {
+public class HallFilmInfo extends Model<HallFilmInfo> {
 
     private static final long serialVersionUID = 1L;
 
@@ -29,19 +29,39 @@ public class FilmActor extends Model<FilmActor> {
     private Integer uuid;
 
     /**
-     * 影片编号,对应mooc_film_t
+     * 电影编号
      */
     private Integer filmId;
 
     /**
-     * 演员编号,对应mooc_actor_t
+     * 电影名称
      */
-    private Integer actorId;
+    private String filmName;
 
     /**
-     * 角色名称
+     * 电影时长
      */
-    private String roleName;
+    private String filmLength;
+
+    /**
+     * 电影类型
+     */
+    private String filmCats;
+
+    /**
+     * 电影语言
+     */
+    private String filmLanguage;
+
+    /**
+     * 演员列表
+     */
+    private String actors;
+
+    /**
+     * 图片地址
+     */
+    private String imgAddress;
 
     @Override
     protected Serializable pkVal() {
@@ -50,11 +70,15 @@ public class FilmActor extends Model<FilmActor> {
 
     @Override
     public String toString() {
-        return "FilmActor{" +
+        return "HallFilmInfo{" +
         ", uuid=" + uuid +
         ", filmId=" + filmId +
-        ", actorId=" + actorId +
-        ", roleName=" + roleName +
+        ", filmName=" + filmName +
+        ", filmLength=" + filmLength +
+        ", filmCats=" + filmCats +
+        ", filmLanguage=" + filmLanguage +
+        ", actors=" + actors +
+        ", imgAddress=" + imgAddress +
         "}";
     }
 }

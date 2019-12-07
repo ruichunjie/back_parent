@@ -1,24 +1,28 @@
-package cn.film.back.common.entity;
+package cn.film.back.film.entity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.annotation.TableId;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 /**
  * <p>
- * 影厅电影信息表
+ * 影片与演员映射表
  * </p>
  *
  * @author xinyue
  * @since 2019-12-04
  */
-@TableName("cn_hall_film_info")
+@TableName("cn_film_actor")
 @Data
 @Builder
-public class HallFilmInfo extends Model<HallFilmInfo> {
+@AllArgsConstructor
+@NoArgsConstructor
+public class FilmActor extends Model<FilmActor> {
 
     private static final long serialVersionUID = 1L;
 
@@ -29,39 +33,19 @@ public class HallFilmInfo extends Model<HallFilmInfo> {
     private Integer uuid;
 
     /**
-     * 电影编号
+     * 影片编号,对应mooc_film_t
      */
     private Integer filmId;
 
     /**
-     * 电影名称
+     * 演员编号,对应mooc_actor_t
      */
-    private String filmName;
+    private Integer actorId;
 
     /**
-     * 电影时长
+     * 角色名称
      */
-    private String filmLength;
-
-    /**
-     * 电影类型
-     */
-    private String filmCats;
-
-    /**
-     * 电影语言
-     */
-    private String filmLanguage;
-
-    /**
-     * 演员列表
-     */
-    private String actors;
-
-    /**
-     * 图片地址
-     */
-    private String imgAddress;
+    private String roleName;
 
     @Override
     protected Serializable pkVal() {
@@ -70,15 +54,11 @@ public class HallFilmInfo extends Model<HallFilmInfo> {
 
     @Override
     public String toString() {
-        return "HallFilmInfo{" +
+        return "FilmActor{" +
         ", uuid=" + uuid +
         ", filmId=" + filmId +
-        ", filmName=" + filmName +
-        ", filmLength=" + filmLength +
-        ", filmCats=" + filmCats +
-        ", filmLanguage=" + filmLanguage +
-        ", actors=" + actors +
-        ", imgAddress=" + imgAddress +
+        ", actorId=" + actorId +
+        ", roleName=" + roleName +
         "}";
     }
 }

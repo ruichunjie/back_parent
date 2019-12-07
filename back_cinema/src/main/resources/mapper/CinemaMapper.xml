@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.film.back.common.mapper.CinemaMapper">
+<mapper namespace="cn.film.back.cinema.mapper.CinemaMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="cn.film.back.common.entity.Cinema">
+    <resultMap id="BaseResultMap" type="cn.film.back.cinema.entity.Cinema">
         <id column="UUID" property="uuid" />
         <result column="cinema_name" property="cinemaName" />
         <result column="cinema_phone" property="cinemaPhone" />

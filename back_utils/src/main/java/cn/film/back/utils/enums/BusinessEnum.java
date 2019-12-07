@@ -25,7 +25,8 @@ public enum BusinessEnum implements IBusinessEnum {
     /**自定义异常*/
     COMMONNAME_FAILED(1001,"数据库中有多个同名后台用户!"),
     USERNAME_FAILED(1002,"用户名输入有误!"),
-    PASSWORD_FAILED(1002,"用户密码输入有误!"),
+    PASSWORD_FAILED(1003,"用户密码输入有误!"),
+    NOCONSISTANT(1004,"演员和角色名数量不匹配"),
     ;
     private Integer code;
 

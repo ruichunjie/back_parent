@@ -23,6 +23,8 @@
         <module>back_config</module>
         <module>back_eureka</module>
         <module>back_film</module>
+        <module>back_hall</module>
+        <module>back_cinema</module>
     </modules>
 
     <properties>

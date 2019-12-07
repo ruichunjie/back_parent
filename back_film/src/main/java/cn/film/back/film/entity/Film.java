@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 /**
@@ -20,6 +21,7 @@ import java.io.Serializable;
 @TableName("cn_film")
 @Data
 @Builder
+@NoArgsConstructor
 public class Film extends Model<Film> {
 
     private static final long serialVersionUID = 1L;

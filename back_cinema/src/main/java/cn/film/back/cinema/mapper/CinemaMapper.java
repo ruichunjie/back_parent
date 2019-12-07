@@ -1,6 +1,6 @@
-package cn.film.back.common.mapper;
+package cn.film.back.cinema.mapper;
 
-import cn.film.back.common.entity.Cinema;
+import cn.film.back.cinema.entity.Cinema;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

@@ -1,10 +1,12 @@
-package cn.film.back.common.entity;
+package cn.film.back.cinema.entity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.annotation.TableId;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 /**
@@ -18,6 +20,8 @@ import java.io.Serializable;
 @TableName("cn_cinema")
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Cinema extends Model<Cinema> {
 
     private static final long serialVersionUID = 1L;
