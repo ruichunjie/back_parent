@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 
 /**
- * @description:
+ * @description: 电影院服务
  * @author: xinYue
  * @time: 2019/12/7 9:45
  */
