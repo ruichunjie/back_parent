@@ -18,6 +18,10 @@
             <groupId>cn.film.back</groupId>
             <artifactId>back-common</artifactId>
         </dependency>
+        <dependency>
+            <groupId>cn.film.back</groupId>
+            <artifactId>back-api</artifactId>
+        </dependency>
 
         <!--引入eureka-client-->
         <dependency>
@@ -29,6 +33,11 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
     </dependencies>
 

@@ -1,4 +1,4 @@
-package cn.film.back.film.vo;
+package cn.film.back.api.film.vo;
 
 import lombok.Data;
 

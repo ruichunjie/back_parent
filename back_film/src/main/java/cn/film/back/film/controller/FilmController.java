@@ -1,9 +1,9 @@
 package cn.film.back.film.controller;
 
+import cn.film.back.api.film.vo.FilmRespVo;
 import cn.film.back.common.util.PageUtil;
 import cn.film.back.film.service.FilmService;
 import cn.film.back.film.vo.ActorRespVo;
-import cn.film.back.film.vo.FilmRespVo;
 import cn.film.back.film.vo.FilmSavedReqVo;
 import cn.film.back.utils.common.vo.BasePageVo;
 import cn.film.back.utils.common.vo.BaseResponseVo;
@@ -62,7 +62,7 @@ public class FilmController {
      */
     @GetMapping(value = "/{filmId}")
     @ApiOperation(value = "获取影片详情", notes = "获取影片详情")
-    public BaseResponseVo filmById(@ApiParam("主键ID")@PathVariable("filmId")Integer filmId){
+    public BaseResponseVo<FilmRespVo> filmById(@ApiParam("主键ID")@PathVariable("filmId")Integer filmId){
         return BaseResponseVo.success(filmService.filmById(filmId));
     }
 

@@ -19,7 +19,7 @@
         <result column="film_status" property="filmStatus" />
     </resultMap>
 
-    <select id="findAllFilm" resultType="cn.film.back.film.vo.FilmRespVo">
+    <select id="findAllFilm" resultType="cn.film.back.api.film.vo.FilmRespVo">
         SELECT
          film.`UUID` AS  filmId,
          film.`film_status` AS filmStatus,

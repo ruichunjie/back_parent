@@ -6,7 +6,10 @@ import cn.film.back.cinema.vo.CinemaSavedReqVo;
 import cn.film.back.common.util.PageUtil;
 import cn.film.back.utils.common.vo.BasePageVo;
 import cn.film.back.utils.common.vo.BaseResponseVo;
+import cn.film.back.utils.exception.BusinessException;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -33,11 +36,31 @@ public class CinemaController {
     @Autowired
     private CinemaService cinemaService;
 
+    public BaseResponseVo fallbackMethod(BasePageVo basePageVo){
+        return BaseResponseVo.success();
+    }
+
     /**
      * 获取所有的电影院
      * @param basePageVo
      * @return
      */
+    @HystrixCommand(fallbackMethod = "fallbackMethod",
+            commandProperties = {
+                    @HystrixProperty(name = "execution.isolation.strategy", value = "THREAD"),
+                    @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value= "4000"),
+                    @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),
+                    @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "50")
+            },
+            threadPoolProperties = {
+                    @HystrixProperty(name = "coreSize", value = "1"),
+                    @HystrixProperty(name = "maxQueueSize", value = "10"),
+                    @HystrixProperty(name = "keepAliveTimeMinutes", value = "1000"),
+                    @HystrixProperty(name = "queueSizeRejectionThreshold", value = "8"),
+                    @HystrixProperty(name = "metrics.rollingStats.numBuckets", value = "12"),
+                    @HystrixProperty(name = "metrics.rollingStats.timeInMilliseconds", value = "1500")
+            },
+    ignoreExceptions = BusinessException.class)
     @RequestMapping(value = "",method = RequestMethod.GET)
     @ApiOperation(value = "获取所有的电影院", notes = "获取所有的电影院")
     public BaseResponseVo cinemas(@ApiParam("分页对象")  @Valid BasePageVo basePageVo){

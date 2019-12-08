@@ -7,6 +7,7 @@
  1. Eureka Client通过发送心跳进行续约
  2. 默认情况下每30秒发送一次心跳  
  3. 如果90秒内Eureka Server未收到续约，则进行服务剔除
+ 配置 查看EurekaClientConfigBean
  
 #### 服务下线
  1. Eureka Client优雅退出时，会发送cancel命令  
@@ -37,3 +38,34 @@
  1. Eureka Server会自动更新续约更新阀值  
  2. Eureka Server续约更新频率低于阀值则进入保护模式
  3. 保护模式下Eureka Server不会剔除任何注册信息
+ 
+### 其他注册中心
+#### Zookeeper
+````
+    <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-zookeeper-discover</artifactId>
+            </dependency>
+```` 
+配置 spring.cloud.zookeeper.connectString:127.0.0.1:2181
+#### consule
+````
+<dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-consul-discover</artifactId>
+            </dependency>
+````
+配置 spring.cloud.consule.discovery.ipAddress: 127.0.0.1
+spring.cloud.consule.discovery.port: 8500
+
+如果同时写三种配置然后进行选择,需要关闭自动特性:
+eureka.client.enabled: false
+spring.cloud.zookeeper.enabled: false
+ spring.cloud.consule.discovery.enabled:false
+然后在相应的配置文件里又将其打开
+
+|注册中心  |CAP特性  |推荐规模|
+|   ----   |-----    | -----|
+| Eureka  |AP      |   <30K|
+|Zookeeper| CP     | <30K  |
+|Consule  |AP/CP   | <5K   |

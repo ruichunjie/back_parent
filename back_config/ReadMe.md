@@ -19,3 +19,10 @@
 本质上是对"/bus/refresh"的访问
 
 4.客户端要同步刷新的话 对property配置类加上@RefreshScope
+
+### 本质
+> 配置来源
+* 核心APi
+1. BootstrapApplicationListener
+2. 对@RefreshScope的对象的scope改为Refresh的， 配置修改后将对这些对象destory() 
+    destroy()非常危险

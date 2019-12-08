@@ -1,8 +1,8 @@
 package cn.film.back.film.mapper;
 
+import cn.film.back.api.film.vo.FilmRespVo;
 import cn.film.back.film.entity.Film;
 import cn.film.back.film.vo.FilmDetailRespVo;
-import cn.film.back.film.vo.FilmRespVo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;

@@ -8,41 +8,24 @@
         <version>1.0.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>back-hall</artifactId>
-    <name>back-hall</name>
-    <description>film 后台系统播放厅</description>
+    <artifactId>back-api</artifactId>
+    <name>back-api</name>
+    <description>film 后台公共api</description>
 
     <dependencies>
-        <!--film 包-->
         <dependency>
-            <groupId>cn.film.back</groupId>
-            <artifactId>back-common</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
-        <dependency>
-            <groupId>cn.film.back</groupId>
-            <artifactId>back-api</artifactId>
-        </dependency>
-
-        <!--eureka客户端-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-
-        <!--引入config-client-->
+        <!-- 公共工具类支持-->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-client</artifactId>
+            <groupId>cn.film.back</groupId>
+            <artifactId>back-utils</artifactId>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

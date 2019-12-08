@@ -25,6 +25,7 @@
         <module>back_film</module>
         <module>back_hall</module>
         <module>back_cinema</module>
+        <module>back_api</module>
     </modules>
 
     <properties>
@@ -94,6 +95,12 @@
             <dependency>
                 <groupId>cn.film.back</groupId>
                 <artifactId>back-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.film.back</groupId>
+                <artifactId>back-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
